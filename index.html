@@ -1,12 +1,116 @@
-<main class="container py-4">
-  <div class="tab-content">
-    <div class="tab-pane fade show active" id="tab-showreel" role="tabpanel"></div>
-    <div class="tab-pane fade" id="tab-projects" role="tabpanel"></div>
-    <div class="tab-pane fade" id="tab-experience" role="tabpanel"></div>
-    <div class="tab-pane fade" id="tab-skills" role="tabpanel"></div>
-    <div class="tab-pane fade" id="tab-education" role="tabpanel"></div>
-    <div class="tab-pane fade" id="tab-mentorships" role="tabpanel"></div>
-    <div class="tab-pane fade" id="tab-community" role="tabpanel"></div>
-    <div class="tab-pane fade" id="tab-contact" role="tabpanel"></div>
-  </div>
-</main>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bradley Padgett – Technical Artist Portfolio</title>
+  <meta name="description" content="Portfolio website for Bradley Padgett, a Technical Artist specializing in shaders, Unreal Engine, real-time rendering, and pipeline tooling." />
+  <meta property="og:title" content="Bradley Padgett – Technical Artist" />
+  <meta property="og:description" content="Shaders • Unreal Engine • Tools • Real-time Rendering" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/cover.jpg" />
+  <meta name="theme-color" content="#0b0b10" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b0b10; --text:#e7e9ee; --muted:#b7bcc9; --brand:#7aa2ff; --stroke:#222537 }
+    body{ background:var(--bg); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial }
+    a{ color:#7aa2ff }
+    header{ position:sticky; top:0; z-index:1030; backdrop-filter:blur(8px); background:rgba(11,11,16,.85); border-bottom:1px solid var(--stroke) }
+    .navbar-brand{ font-weight:800; color:var(--text) }
+    .navbar-nav .nav-link{ color:var(--muted) }
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link:hover{ color:#0b0b10 !important; background:linear-gradient(135deg,#7aa2ff,#9a7dff); border-radius:.5rem }
+    .hero-title{ font-size:clamp(28px,4vw,44px); line-height:1.1 }
+    .media-frame{ border:1px solid var(--stroke); border-radius:1rem; padding:.5rem; background:rgba(122,162,255,.08) }
+    .ratio > iframe, .ratio > video{ border-radius:.75rem }
+    .tab-pane{ padding-top:1.5rem }
+    .card{ background:#13141d; border-color:#222537; color:var(--text) }
+    .text-muted{ color:var(--muted) !important }
+    footer{ border-top:1px solid var(--stroke); margin-top:2rem; padding:1rem 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand" href="#tab-showreel">Bradley Padgett</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTabs" aria-controls="navbarTabs" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTabs">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-showreel" href="#tab-showreel" role="tab">Showreel</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-projects" href="#tab-projects" role="tab">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-experience" href="#tab-experience" role="tab">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-skills" href="#tab-skills" role="tab">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-education" href="#tab-education" role="tab">Education</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-mentorships" href="#tab-mentorships" role="tab">Mentorships</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-community" href="#tab-community" role="tab">Community</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-contact" href="#tab-contact" role="tab">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="container py-4">
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="tab-showreel" role="tabpanel"></div>
+      <div class="tab-pane fade" id="tab-projects" role="tabpanel"></div>
+      <div class="tab-pane fade" id="tab-experience" role="tabpanel"></div>
+      <div class="tab-pane fade" id="tab-skills" role="tabpanel"></div>
+      <div class="tab-pane fade" id="tab-education" role="tabpanel"></div>
+      <div class="tab-pane fade" id="tab-mentorships" role="tabpanel"></div>
+      <div class="tab-pane fade" id="tab-community" role="tabpanel"></div>
+      <div class="tab-pane fade" id="tab-contact" role="tabpanel"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <small>© <span id="year"></span> Bradley Padgett. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Footer year
+    const yEl = document.getElementById('year');
+    if (yEl) yEl.textContent = new Date().getFullYear();
+
+    // Load partials into tabs
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.tab-pane').forEach(pane => {
+        const id = pane.id.replace('tab-', '');
+        fetch(`partials/${id}.html`)
+          .then(r => r.text())
+          .then(html => { pane.innerHTML = html; })
+          .catch(err => console.error('Error loading partial for', id, err));
+      });
+    });
+
+    // Deep-link tabs via hash
+    function showTabFromHash(){
+      const hash = window.location.hash;
+      if(!hash) return;
+      const trigger = document.querySelector(`[data-bs-target="${hash}"]`);
+      if(trigger){ new bootstrap.Tab(trigger).show(); }
+    }
+    window.addEventListener('hashchange', showTabFromHash);
+    showTabFromHash();
+
+    // Sync navbar active state & update URL hash
+    document.querySelectorAll('[data-bs-toggle="tab"]').forEach(el=>{
+      el.addEventListener('shown.bs.tab', e=>{
+        const target = e.target.getAttribute('data-bs-target') || e.target.getAttribute('href');
+        if(target) history.replaceState(null,'',target);
+        document.querySelectorAll('header .nav-link').forEach(a=>a.classList.remove('active'));
+        const headerLink=document.querySelector(`header [data-bs-target="${target}"]`);
+        headerLink?.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
