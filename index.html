@@ -70,7 +70,7 @@
 
   <footer>
     <div class="container text-center">
-      <small>© <span id="year"></span> Bradley Padgett. All rights reserved.</small>
+      <small>© <span id="year"></span> Bradley Padgett v2. All rights reserved.</small>
     </div>
   </footer>
 
@@ -84,10 +84,9 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.tab-pane').forEach(pane => {
         const id = pane.id.replace('tab-', '');
-        fetch(`partials/${id}.html`)
-          .then(r => r.text())
-          .then(html => { pane.innerHTML = html; })
-          .catch(err => console.error('Error loading partial for', id, err));
+        fetch(`partials/${id}.html`).then(r => r.text()).then(html => {
+          pane.innerHTML = html;
+        }).catch(err => console.error('Error loading partial for', id, err));
       });
     });
 
@@ -101,7 +100,7 @@
     window.addEventListener('hashchange', showTabFromHash);
     showTabFromHash();
 
-    // Sync navbar active state & update URL hash
+    // Keep header nav in sync and update the URL hash on tab change
     document.querySelectorAll('[data-bs-toggle="tab"]').forEach(el=>{
       el.addEventListener('shown.bs.tab', e=>{
         const target = e.target.getAttribute('data-bs-target') || e.target.getAttribute('href');
