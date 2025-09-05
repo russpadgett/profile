@@ -1,10 +1,131 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Russell Padgett</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Russ Padgett – Technical Artist Portfolio</title>
+  <meta name="description" content="Portfolio website for Russ Padgett, a Technical Artist specializing in shaders, Unreal Engine, real‑time rendering, and pipeline tooling." />
+  <meta property="og:title" content="Russ Padgett – Technical Artist" />
+  <meta property="og:description" content="Shaders • Unreal Engine • Tools • Real‑time Rendering" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/cover.jpg" />
+  <meta name="theme-color" content="#0b0b10" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>/* same styles as before */</style>
 </head>
 <body>
-  <h1>Hello, world! 👋</h1>
-  <p>Welcome to my site hosted on GitHub Pages.</p>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">Russ Padgett</a>
+      <nav class="links" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="badge">🎓 Technical Artist — Degree Focus</span>
+          <h1>Building the bridge between art and engineering.</h1>
+          <p>
+            I’m Russ Padgett, a Technical Artist focusing on <strong>Unreal Engine</strong>, real‑time rendering,
+            shaders, and tools development. I turn visual ideas into performant, scalable pipelines for games and interactive experiences.
+          </p>
+          <div class="cta">
+            <a class="btn" href="#projects">View Work</a>
+            <a class="btn secondary" href="/assets/Russ-Padgett-Resume.pdf" download>Download Résumé</a>
+          </div>
+        </div>
+        <div class="media">
+          <img src="/assets/hero-showreel.jpg" alt="Showreel preview still" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects section unchanged -->
+
+    <section id="skills">
+      <div class="section-head">
+        <h2>Core Skills</h2>
+        <p class="lead">Cloud-based solutions, shaders, real-time rendering, pipeline tooling, and more.</p>
+      </div>
+      <div class="skill-list">
+        <div class="skill">
+          <h4>Front-End</h4>
+          <p class="meta">ReactJS (Class/FC, Hooks, Redux, Vite, NextJS), Blazor, MVC, HTML5, CSS, JavaScript</p>
+        </div>
+        <div class="skill">
+          <h4>Back-End & Languages</h4>
+          <p class="meta">C#, .NET Core (ASP.NET, RESTful API), GoLang, Java (Spring Boot)</p>
+        </div>
+        <div class="skill">
+          <h4>Databases</h4>
+          <p class="meta">SQL Server (query optimization), EF Core, NHibernate, Postgres, CosmosDB, Redis, Snowflake</p>
+        </div>
+        <div class="skill">
+          <h4>Cloud Platforms</h4>
+          <p class="meta">Azure Functions, Service Bus, Event Grid, Event Hub, AKS, Microservices, Kafka, AWS GameLift</p>
+        </div>
+        <div class="skill">
+          <h4>Tools & DevOps</h4>
+          <p class="meta">ADO, GitHub, Visual Studio, VS Code, IntelliJ, Git, CI/CD</p>
+        </div>
+        <div class="skill">
+          <h4>Collaboration</h4>
+          <p class="meta">Mentorship, documentation, cross-team integration, partner/client collaboration</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <h2>Professional Experience</h2>
+        <p class="lead">Highlights from my career as a Technical Artist and Software Engineer.</p>
+      </div>
+      <div class="grid">
+        <div class="card" style="grid-column: span 12;">
+          <h3>Senior Software Engineer – GEICO (01/24 – Present)</h3>
+          <p class="meta">Leading design & development of a self-service partner integration platform.</p>
+          <p>
+            Built scalable microservices and APIs enabling partners to seamlessly integrate with GEICO offerings.
+            Collaborated with cross-functional teams, ensuring reliability, security, and performance in production systems.
+          </p>
+        </div>
+        <div class="card" style="grid-column: span 12;">
+          <h3>Technical Artist – Shell / Forestry Projects</h3>
+          <p class="meta">Interactive facility representation • Visualization • Shader pipelines</p>
+          <p>
+            Partnered with Shell to deliver interactive facility representations. Collaborated with A&M Forestry Service on deforestation & flood simulations. Created shader pipelines, optimized materials, and mentored peers on Unreal workflows.
+          </p>
+        </div>
+        <div class="card" style="grid-column: span 12;">
+          <h3>Software Engineer – SureTax (Prototype & Scaling)</h3>
+          <p class="meta">Cloud-native architecture • SaaS tax calculation engine</p>
+          <p>
+            Architected, developed, and scaled the SureTax engine from prototype to SaaS product. Leveraged Azure technologies and event-driven design to handle high-throughput transaction processing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About and Contact sections unchanged -->
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Russ Padgett. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
