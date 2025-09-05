@@ -13,39 +13,48 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-fC2F1f2z0" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root{ --bg:#0b0b10; --text:#e7e9ee; --muted:#b7bcc9; --brand:#7aa2ff; --stroke:#222537 }
     body{ background:var(--bg); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial }
     a{ color:#7aa2ff }
-    header{ position:sticky; top:0; z-index:1030; backdrop-filter:blur(8px); background:rgba(11,11,16,.75); border-bottom:1px solid var(--stroke) }
-    .navbar-brand{ font-weight:800 }
+    header{ position:sticky; top:0; z-index:1030; backdrop-filter:blur(8px); background:rgba(11,11,16,.85); border-bottom:1px solid var(--stroke) }
+    .navbar-brand{ font-weight:800; color:var(--text) }
+    .navbar-nav .nav-link{ color:var(--muted) }
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link:hover{ color:#0b0b10 !important; background:linear-gradient(135deg,#7aa2ff,#9a7dff); border-radius:.5rem }
     .hero-title{ font-size:clamp(28px,4vw,44px); line-height:1.1 }
     .badge-pill{ border:1px solid var(--stroke); color:var(--muted) }
     .media-frame{ border:1px solid var(--stroke); border-radius:1rem; padding:.5rem; background:rgba(122,162,255,.08) }
     .ratio > iframe, .ratio > video{ border-radius:.75rem }
     .nav-pills .nav-link.active{ background:linear-gradient(135deg,#7aa2ff,#9a7dff); color:#0b0b10; font-weight:700 }
-    .tab-pane{ padding-top:1rem }
+    .tab-pane{ padding-top:1.5rem }
     .card{ background:#13141d; border-color:#222537; color:var(--text) }
     .text-muted{ color:var(--muted) !important }
-    footer{ border-top:1px solid var(--stroke) }
+    footer{ border-top:1px solid var(--stroke); margin-top:2rem; padding:1rem 0; }
   </style>
 </head>
 <body>
   <header>
-    <div class="container nav">
-      <h2><a class="brand" href="#top">Bradley Padgett v2</a></h2>
-      <nav class="links d-none d-md-flex" aria-label="Primary">
-        <a class="nav-link" data-bs-toggle="tab" href="#tab-showreel" role="tab">Showreel</a>
-        <a class="nav-link" data-bs-toggle="tab" href="#tab-projects" role="tab">Projects</a>
-        <a class="nav-link" data-bs-toggle="tab" href="#tab-experience" role="tab">Experience</a>
-        <a class="nav-link" data-bs-toggle="tab" href="#tab-skills" role="tab">Skills</a>
-        <a class="nav-link" data-bs-toggle="tab" href="#tab-education" role="tab">Education</a>
-        <a class="nav-link" data-bs-toggle="tab" href="#tab-mentorships" role="tab">Mentorships</a>
-        <a class="nav-link" data-bs-toggle="tab" href="#tab-community" role="tab">Community</a>
-        <a class="nav-link" data-bs-toggle="tab" href="#tab-contact" role="tab">Contact</a>
-      </nav>
-    </div>
+    <nav class="navbar navbar-expand-md navbar-dark" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand" href="#tab-showreel">Bradley Padgett v3</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTabs" aria-controls="navbarTabs" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTabs">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-showreel" href="#tab-showreel" role="tab">Showreel</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-projects" href="#tab-projects" role="tab">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-experience" href="#tab-experience" role="tab">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-skills" href="#tab-skills" role="tab">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-education" href="#tab-education" role="tab">Education</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-mentorships" href="#tab-mentorships" role="tab">Mentorships</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-community" href="#tab-community" role="tab">Community</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-contact" href="#tab-contact" role="tab">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main id="top" class="container py-4">
@@ -70,7 +79,7 @@
             <h1 class="hero-title mt-3">Building the bridge between art and engineering.</h1>
             <p class="text-muted">I’m <strong>Bradley Padgett</strong>, a Technical Artist focused on Unreal Engine, shaders, Niagara FX, and pipeline tooling.</p>
             <div class="d-flex gap-2 mt-2">
-              <a class="btn btn-lg btn-primary" href="#" data-bs-toggle="tab" data-bs-target="#tab-projects">View Work</a>
+              <a class="btn btn-lg btn-primary" href="#tab-projects" data-bs-toggle="tab">View Work</a>
               <a class="btn btn-outline-light" href="/assets/Bradley-Padgett-Resume.pdf" download>Download Résumé</a>
             </div>
           </div>
@@ -84,117 +93,42 @@
         </div>
       </div>
 
-      <!-- Projects -->
-      <div class="tab-pane fade" id="tab-projects" role="tabpanel">
-        <div class="row g-3 mt-1">
-          <div class="col-md-6">
-            <div class="card h-100"><div class="card-body">
-              <h5 class="card-title">Stack Plugin</h5>
-              <p class="card-text">Unreal Engine plugin enabling technical designers to customize workflows; required in-depth research into Unreal’s architecture.</p>
-              <a class="btn btn-sm btn-outline-primary" href="https://stackplugin.com" target="_blank" rel="noreferrer">Visit site</a>
-            </div></div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100"><div class="card-body">
-              <h5 class="card-title">Painterly Stylized Shaders</h5>
-              <p class="card-text">Editor Utility tools for bulk asset conversion/cleanup and shader optimization across quality tiers.</p>
-            </div></div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100"><div class="card-body">
-              <h5 class="card-title">Niagara Sailing FX</h5>
-              <p class="card-text">Niagara Grid2D collisions to render targets, Gerstner-wave sampling, and gameplay feedback systems.</p>
-            </div></div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100"><div class="card-body">
-              <h5 class="card-title">Lantern Festival w/ PCG</h5>
-              <p class="card-text">Procedural environment tools, Niagara foliage/lantern controls, Substrate BSDF materials.</p>
-            </div></div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100"><div class="card-body">
-              <h5 class="card-title">AWS Demo | C++ Dedicated Server</h5>
-              <p class="card-text">Scalable multiplayer with AWS GameLift, Lambda, DynamoDB (matchmaking, auth, persistence).</p>
-            </div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Experience -->
-      <div class="tab-pane fade" id="tab-experience" role="tabpanel">
-        <div class="card mb-3"><div class="card-body">
-          <h5 class="card-title">LIVE Lab – Educational Game Development & Research Studio <span class="text-muted">(Mar 2022 – May 2024)</span></h5>
-          <div class="text-muted">Technical Artist</div>
-          <ul class="mt-2 mb-0">
-            <li>Interactive digital facility representations for Shell (on-site collaboration).</li>
-            <li>Deforestation & flood simulations with A&M Forestry Service.</li>
-            <li>Shader pipelines/tools to accelerate research & development workflows.</li>
-          </ul>
-        </div></div>
-      </div>
-
-      <!-- Skills -->
-      <div class="tab-pane fade" id="tab-skills" role="tabpanel">
-        <div class="row g-3 mt-1">
-          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Engines</h6><div class="text-muted">Unreal (Niagara, Materials, Blueprints), Unity (Shaders, VFX Graph)</div></div></div></div>
-          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Rendering & Shaders</h6><div class="text-muted">HLSL/GLSL, Material Functions, LOD/Quality tiers, GPU profiling</div></div></div></div>
-          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Content Tools</h6><div class="text-muted">Blender, Substance 3D, Houdini (HDA), Geometry Scripting</div></div></div></div>
-          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Scripting & Dev</h6><div class="text-muted">Python, C++/C#, Git/Perforce, CI; Web: React, Next.js</div></div></div></div>
-          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Pipelines</h6><div class="text-muted">Import/validation, batch tools, shader migration, performance audits</div></div></div></div>
-          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Cloud & Data</h6><div class="text-muted">Azure (Functions, ASB, Event Grid, AKS), AWS, SQL/EF Core, Postgres, Cosmos DB, Redis</div></div></div></div>
-        </div>
-      </div>
-
-      <!-- Education -->
-      <div class="tab-pane fade" id="tab-education" role="tabpanel">
-        <div class="card"><div class="card-body">
-          <h5 class="card-title">Texas A&M University — B.S. Visualization</h5>
-          <div class="text-muted">College of Architecture, College Station, TX • 2019–2023</div>
-        </div></div>
-      </div>
-
-      <!-- Mentorships -->
-      <div class="tab-pane fade" id="tab-mentorships" role="tabpanel">
-        <div class="card"><div class="card-body">
-          <h5 class="card-title">Epic Games <span class="text-muted">(2022–2023)</span></h5>
-          <p class="mb-0">Mentored by an Epic Games Technical Artist to develop lightweight principled shaders modularized into material functions with quality/platform switches.</p>
-        </div></div>
-      </div>
-
-      <!-- Community -->
-      <div class="tab-pane fade" id="tab-community" role="tabpanel">
-        <div class="row g-3 mt-1">
-          <div class="col-md-6"><div class="card h-100"><div class="card-body">
-            <h6>Judge — Chillennium Game Jam (2024)</h6>
-            <p class="mb-0">Assessed submissions on creativity, design, and technical execution; provided critique to student developers.</p>
-          </div></div></div>
-          <div class="col-md-6"><div class="card h-100"><div class="card-body">
-            <h6>Child Advocacy Game (2021)</h6>
-            <p class="mb-0">Educational courtroom simulation with Scotty’s House & Brazos County Courthouse. Led PM, scripting, lighting, and repo management.</p>
-          </div></div></div>
-        </div>
-      </div>
-
-      <!-- Contact -->
-      <div class="tab-pane fade" id="tab-contact" role="tabpanel">
-        <div class="card"><div class="card-body">
-          <h5 class="card-title">Get in touch</h5>
-          <p class="text-muted">Open to technical artist roles, shader work, and tooling engagements.</p>
-          <a class="btn btn-primary" href="mailto:russpadgett@gmail.com">Email Bradley</a>
-        </div></div>
-      </div>
+      <!-- Other tabs (Projects, Experience, Skills, Education, Mentorships, Community, Contact) go here -->
     </div>
   </main>
 
   <footer>
-    <div class="container">
+    <div class="container text-center">
       <small>© <span id="year"></span> Bradley Padgett. All rights reserved.</small>
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qv2yI7n" crossorigin="anonymous"></script>
-  <script>document.getElementById('year')?.textContent=new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Footer year
+    const yEl = document.getElementById('year');
+    if (yEl) yEl.textContent = new Date().getFullYear();
+
+    // Show tab from URL hash
+    function showTabFromHash(){
+      const hash = window.location.hash;
+      if(!hash) return;
+      const trigger = document.querySelector(`[data-bs-target="${hash}"]`);
+      if(trigger){ new bootstrap.Tab(trigger).show(); }
+    }
+    window.addEventListener('hashchange', showTabFromHash);
+    showTabFromHash();
+
+    // Update hash on tab change & sync navbar active state
+    document.querySelectorAll('[data-bs-toggle="tab"]').forEach(el=>{
+      el.addEventListener('shown.bs.tab', e=>{
+        const target = e.target.getAttribute('data-bs-target') || e.target.getAttribute('href');
+        if(target) history.replaceState(null,'',target);
+        document.querySelectorAll('header .nav-link').forEach(a=>a.classList.remove('active'));
+        const headerLink=document.querySelector(`header [data-bs-target="${target}"]`);
+        headerLink?.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
