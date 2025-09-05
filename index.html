@@ -13,177 +13,178 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-fC2F1f2z0" crossorigin="anonymous">
   <style>
-  :root{
-    --bg:#0b0b10; --bg2:#12131a; --text:#e7e9ee; --muted:#b7bcc9;
-    --brand:#7aa2ff; --brand2:#9a7dff; --card:#13141d; --stroke:#222537;
-    --shadow:0 10px 25px rgba(0,0,0,.35);
-  }
-  @media (prefers-color-scheme: light){
-    :root{ --bg:#ffffff; --bg2:#f7f7fb; --text:#0f1220; --muted:#4c5368; --card:#ffffff; --stroke:#e5e7f0; --shadow:0 10px 25px rgba(17,24,39,.08); }
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
-  a{color:var(--brand);text-decoration:none}
-  a:hover{text-decoration:underline}
-  img,video{max-width:100%;display:block;border-radius:14px}
-  .container{width:min(1100px,92%);margin-inline:auto}
-
-  /* Header */
-  header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in oklab, var(--bg), transparent 40%);border-bottom:1px solid var(--stroke)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-  .brand{font-weight:800;letter-spacing:.2px;color:var(--text)}
-  .links{display:flex;gap:18px}
-
-  /* Sections */
-  section{padding:56px 0}
-  .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}
-  h1{font-size:clamp(28px,4.2vw,44px);line-height:1.1;margin:16px 0 10px}
-  h2{font-size:28px;margin:0}
-  p.lead{color:var(--muted);margin-top:8px}
-  .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#0b0b10;padding:12px 16px;border-radius:12px;font-weight:700;border:0;box-shadow:var(--shadow)}
-  .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--stroke);box-shadow:none}
-
-  /* Hero */
-  .hero{padding:56px 0 24px}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
-  .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid var(--stroke);border-radius:999px;color:var(--muted);font-size:13px}
-  .media{background:linear-gradient(180deg, rgba(122,162,255,.12), rgba(154,125,255,.05));border:1px solid var(--stroke);padding:10px;border-radius:18px;box-shadow:var(--shadow)}
-  .media .embed{position:relative;aspect-ratio:16/9;width:100%;max-height:clamp(220px,42vh,420px);overflow:hidden;border-radius:14px}
-  .media .embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-
-  /* Cards & grids */
-  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-  .card{background:var(--card);border:1px solid var(--stroke);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
-  .card h3{margin:10px 0 6px;font-size:20px}
-  .meta{color:var(--muted);font-size:14px}
-
-  /* Responsive */
-  @media (max-width:920px){.hero-grid{grid-template-columns:1fr}.media .embed{max-height:clamp(220px,45vw,380px)}}
-  @media (max-width:720px){.grid{grid-template-columns:1fr 1fr}}
-  @media (max-width:520px){.grid{grid-template-columns:1fr}}
-</style>
+    :root{ --bg:#0b0b10; --text:#e7e9ee; --muted:#b7bcc9; --brand:#7aa2ff; --stroke:#222537 }
+    body{ background:var(--bg); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial }
+    a{ color:#7aa2ff }
+    header{ position:sticky; top:0; z-index:1030; backdrop-filter:blur(8px); background:rgba(11,11,16,.75); border-bottom:1px solid var(--stroke) }
+    .navbar-brand{ font-weight:800 }
+    .hero-title{ font-size:clamp(28px,4vw,44px); line-height:1.1 }
+    .badge-pill{ border:1px solid var(--stroke); color:var(--muted) }
+    .media-frame{ border:1px solid var(--stroke); border-radius:1rem; padding:.5rem; background:rgba(122,162,255,.08) }
+    .ratio > iframe, .ratio > video{ border-radius:.75rem }
+    .nav-pills .nav-link.active{ background:linear-gradient(135deg,#7aa2ff,#9a7dff); color:#0b0b10; font-weight:700 }
+    .tab-pane{ padding-top:1rem }
+    .card{ background:#13141d; border-color:#222537; color:var(--text) }
+    .text-muted{ color:var(--muted) !important }
+    footer{ border-top:1px solid var(--stroke) }
+  </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <a class="brand" href="#top">Bradley Padgett</a>
-      <nav class="links" aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <nav class="links d-none d-md-flex" aria-label="Primary">
+        <a class="nav-link" data-bs-toggle="tab" href="#tab-showreel" role="tab">Showreel</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#tab-projects" role="tab">Projects</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#tab-experience" role="tab">Experience</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#tab-skills" role="tab">Skills</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#tab-education" role="tab">Education</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#tab-mentorships" role="tab">Mentorships</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#tab-community" role="tab">Community</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#tab-contact" role="tab">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="top" class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <span class="badge">🎓 Technical Artist — Degree Focus</span>
-          <h1>Building the bridge between art and engineering.</h1>
-          <p>
-            I’m Bradley Padgett, a Technical Artist focusing on <strong>Unreal Engine</strong>, real-time rendering,
-            shaders, and tools development. I turn visual ideas into performant, scalable pipelines for games and interactive experiences.
-          </p>
-          <div class="cta">
-            <a class="btn" href="#projects">View Work</a>
-            <a class="btn secondary" href="/assets/Bradley-Padgett-Resume.pdf" download>Download Résumé</a>
+  <main id="top" class="container py-4">
+    <!-- Tabs -->
+    <ul class="nav nav-pills flex-wrap gap-2" id="portfolioTabs" role="tablist">
+      <li class="nav-item" role="presentation"><button class="nav-link active" id="showreel-tab" data-bs-toggle="tab" data-bs-target="#tab-showreel" type="button" role="tab">Showreel</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-projects" type="button" role="tab">Projects</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-experience" type="button" role="tab">Experience</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-skills" type="button" role="tab">Skills</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-education" type="button" role="tab">Education</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-mentorships" type="button" role="tab">Mentorships</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-community" type="button" role="tab">Community</button></li>
+      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-contact" type="button" role="tab">Contact</button></li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- Showreel -->
+      <div class="tab-pane fade show active" id="tab-showreel" role="tabpanel" aria-labelledby="showreel-tab">
+        <div class="row align-items-center g-4 mt-2">
+          <div class="col-lg-6">
+            <span class="badge rounded-pill badge-pill">🎓 Technical Artist — Visualization Degree</span>
+            <h1 class="hero-title mt-3">Building the bridge between art and engineering.</h1>
+            <p class="text-muted">I’m <strong>Bradley Padgett</strong>, a Technical Artist focused on Unreal Engine, shaders, Niagara FX, and pipeline tooling.</p>
+            <div class="d-flex gap-2 mt-2">
+              <a class="btn btn-lg btn-primary" href="#" data-bs-toggle="tab" data-bs-target="#tab-projects">View Work</a>
+              <a class="btn btn-outline-light" href="/assets/Bradley-Padgett-Resume.pdf" download>Download Résumé</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="media-frame">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://player.vimeo.com/video/1115977766?badge=0&autopause=0&title=0&byline=0&portrait=0&muted=1&autoplay=1&loop=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Showreel"></iframe>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="media" aria-label="Showreel video">
-  <div class="embed">
-    <iframe
-      src="https://player.vimeo.com/video/1115977766?badge=0&autopause=0&title=0&byline=0&portrait=0&muted=1&autoplay=1&loop=1"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen
-      title="Showreel">
-    </iframe>
-  </div>
-</div>
-        </div>
       </div>
-    </section>
 
-    <!-- Projects section unchanged -->
+      <!-- Projects -->
+      <div class="tab-pane fade" id="tab-projects" role="tabpanel">
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">Stack Plugin</h5>
+              <p class="card-text">Unreal Engine plugin enabling technical designers to customize workflows; required in-depth research into Unreal’s architecture.</p>
+              <a class="btn btn-sm btn-outline-primary" href="https://stackplugin.com" target="_blank" rel="noreferrer">Visit site</a>
+            </div></div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">Painterly Stylized Shaders</h5>
+              <p class="card-text">Editor Utility tools for bulk asset conversion/cleanup and shader optimization across quality tiers.</p>
+            </div></div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">Niagara Sailing FX</h5>
+              <p class="card-text">Niagara Grid2D collisions to render targets, Gerstner-wave sampling, and gameplay feedback systems.</p>
+            </div></div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">Lantern Festival w/ PCG</h5>
+              <p class="card-text">Procedural environment tools, Niagara foliage/lantern controls, Substrate BSDF materials.</p>
+            </div></div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">AWS Demo | C++ Dedicated Server</h5>
+              <p class="card-text">Scalable multiplayer with AWS GameLift, Lambda, DynamoDB (matchmaking, auth, persistence).</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
 
-    <section id="skills">
-      <div class="section-head">
-        <h2>Core Skills</h2>
-        <p class="lead">Cloud-based solutions, shaders, real-time rendering, pipeline tooling, and more.</p>
-      </div>
-      <div class="skill-list">
-        <div class="skill">
-          <h4>Front-End</h4>
-          <p class="meta">ReactJS (Class/FC, Hooks, Redux, Vite, NextJS), Blazor, MVC, HTML5, CSS, JavaScript</p>
-        </div>
-        <div class="skill">
-          <h4>Back-End & Languages</h4>
-          <p class="meta">C#, .NET Core (ASP.NET, RESTful API), GoLang, Java (Spring Boot)</p>
-        </div>
-        <div class="skill">
-          <h4>Databases</h4>
-          <p class="meta">SQL Server (query optimization), EF Core, NHibernate, Postgres, CosmosDB, Redis, Snowflake</p>
-        </div>
-        <div class="skill">
-          <h4>Cloud Platforms</h4>
-          <p class="meta">Azure Functions, Service Bus, Event Grid, Event Hub, AKS, Microservices, Kafka, AWS GameLift</p>
-        </div>
-        <div class="skill">
-          <h4>Tools & DevOps</h4>
-          <p class="meta">ADO, GitHub, Visual Studio, VS Code, IntelliJ, Git, CI/CD</p>
-        </div>
-        <div class="skill">
-          <h4>Collaboration</h4>
-          <p class="meta">Mentorship, documentation, cross-team integration, partner/client collaboration</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="section-head">
-        <h2>Experience</h2>
-        <p class="lead">Professional roles, independent projects, mentorships, and community involvement as a Technical Artist.</p>
-      </div>
-      <div class="grid">
-        <div class="card" style="grid-column: span 12;">
-          <h3>LIVE Lab – Educational Game Development and Research Studio (Mar 2022 – May 2024)</h3>
-          <p class="meta">Technical Artist</p>
-          <p>
-            Partnered with Shell to create interactive digital facility representations through on-site client collaboration. Collaborated with A&M Forestry Service on interactive demonstrations of deforestation and flood stages. Created and documented shader pipelines/tools aiding workflows for development & research teams.
-          </p>
-        </div>
-        <div class="card" style="grid-column: span 12;">
-          <h3>Independent Projects (2022 – Present)</h3>
-          <ul>
-            <li><strong>Stack Plugin</strong>: Developed an Unreal Engine plugin enabling technical designers to customize workflows, requiring in-depth research into Unreal’s architecture.</li>
-            <li><strong>Painterly Stylized Shaders</strong>: Built Editor Utility tools for asset conversion and cleanup, optimized shaders by reducing instructions and texture samples.</li>
-            <li><strong>Niagara Sailing FX</strong>: Created advanced Niagara systems for collision-driven effects and Gerstner wave integration, adding gameplay mechanics and shader feedback.</li>
-            <li><strong>Lantern Festival (with PCG)</strong>: Developed procedural tools for rapid environment iteration with Niagara FX and Substrate’s BSDF materials for dynamic assets.</li>
-            <li><strong>AWS Demo | C++ Dedicated Server</strong>: Built a scalable multiplayer backend using AWS GameLift, Lambda, and DynamoDB for matchmaking, authentication, and persistent data.</li>
+      <!-- Experience -->
+      <div class="tab-pane fade" id="tab-experience" role="tabpanel">
+        <div class="card mb-3"><div class="card-body">
+          <h5 class="card-title">LIVE Lab – Educational Game Development & Research Studio <span class="text-muted">(Mar 2022 – May 2024)</span></h5>
+          <div class="text-muted">Technical Artist</div>
+          <ul class="mt-2 mb-0">
+            <li>Interactive digital facility representations for Shell (on-site collaboration).</li>
+            <li>Deforestation & flood simulations with A&M Forestry Service.</li>
+            <li>Shader pipelines/tools to accelerate research & development workflows.</li>
           </ul>
-        </div>
-        <div class="card" style="grid-column: span 12;">
-          <h3>Mentorships</h3>
-          <p class="meta">Epic Games (2022 – 2023)</p>
-          <p>
-            Mentored by an Epic Games Technical Artist to develop lightweight principled shaders modularized into material functions with platform/quality switches for reusability and cleanliness.
-          </p>
-        </div>
-        <div class="card" style="grid-column: span 12;">
-          <h3>Community Involvement</h3>
-          <ul>
-            <li><strong>Judge – Chillennium Game Jam (2024)</strong>: Served alongside industry professionals, evaluating creativity, design, and technical execution of student submissions.</li>
-            <li><strong>Child Advocacy Game (2021)</strong>: Collaborated with Scotty’s House and Brazos County Courthouse to design an educational courtroom simulation game for children; led project management, scripting, lighting, and repository management.</li>
-          </ul>
+        </div></div>
+      </div>
+
+      <!-- Skills -->
+      <div class="tab-pane fade" id="tab-skills" role="tabpanel">
+        <div class="row g-3 mt-1">
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Engines</h6><div class="text-muted">Unreal (Niagara, Materials, Blueprints), Unity (Shaders, VFX Graph)</div></div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Rendering & Shaders</h6><div class="text-muted">HLSL/GLSL, Material Functions, LOD/Quality tiers, GPU profiling</div></div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Content Tools</h6><div class="text-muted">Blender, Substance 3D, Houdini (HDA), Geometry Scripting</div></div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Scripting & Dev</h6><div class="text-muted">Python, C++/C#, Git/Perforce, CI; Web: React, Next.js</div></div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Pipelines</h6><div class="text-muted">Import/validation, batch tools, shader migration, performance audits</div></div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h6>Cloud & Data</h6><div class="text-muted">Azure (Functions, ASB, Event Grid, AKS), AWS, SQL/EF Core, Postgres, Cosmos DB, Redis</div></div></div></div>
         </div>
       </div>
-    </section>
 
-    <!-- About and Contact sections unchanged -->
+      <!-- Education -->
+      <div class="tab-pane fade" id="tab-education" role="tabpanel">
+        <div class="card"><div class="card-body">
+          <h5 class="card-title">Texas A&M University — B.S. Visualization</h5>
+          <div class="text-muted">College of Architecture, College Station, TX • 2019–2023</div>
+        </div></div>
+      </div>
 
+      <!-- Mentorships -->
+      <div class="tab-pane fade" id="tab-mentorships" role="tabpanel">
+        <div class="card"><div class="card-body">
+          <h5 class="card-title">Epic Games <span class="text-muted">(2022–2023)</span></h5>
+          <p class="mb-0">Mentored by an Epic Games Technical Artist to develop lightweight principled shaders modularized into material functions with quality/platform switches.</p>
+        </div></div>
+      </div>
+
+      <!-- Community -->
+      <div class="tab-pane fade" id="tab-community" role="tabpanel">
+        <div class="row g-3 mt-1">
+          <div class="col-md-6"><div class="card h-100"><div class="card-body">
+            <h6>Judge — Chillennium Game Jam (2024)</h6>
+            <p class="mb-0">Assessed submissions on creativity, design, and technical execution; provided critique to student developers.</p>
+          </div></div></div>
+          <div class="col-md-6"><div class="card h-100"><div class="card-body">
+            <h6>Child Advocacy Game (2021)</h6>
+            <p class="mb-0">Educational courtroom simulation with Scotty’s House & Brazos County Courthouse. Led PM, scripting, lighting, and repo management.</p>
+          </div></div></div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="tab-pane fade" id="tab-contact" role="tabpanel">
+        <div class="card"><div class="card-body">
+          <h5 class="card-title">Get in touch</h5>
+          <p class="text-muted">Open to technical artist roles, shader work, and tooling engagements.</p>
+          <a class="btn btn-primary" href="mailto:russpadgett@gmail.com">Email Bradley</a>
+        </div></div>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -193,5 +194,7 @@
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qv2yI7n" crossorigin="anonymous"></script>
+  <script>document.getElementById('year')?.textContent=new Date().getFullYear();</script>
 </body>
 </html>
