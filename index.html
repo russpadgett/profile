@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bradley Padgett – Technical Artist Portfolio</title>
-  <meta name="description" content="Portfolio website for Bradley Padgett, a Technical Artist specializing in shaders, Unreal Engine, real‑time rendering, and pipeline tooling." />
+  <title>Russ Padgett – Technical Artist Portfolio</title>
+  <meta name="description" content="Portfolio website for Russ Padgett, a Technical Artist specializing in shaders, Unreal Engine, real‑time rendering, and pipeline tooling." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -36,12 +36,14 @@
     @media(max-width:900px){.hero{grid-template-columns:1fr}}
     @media(max-width:700px){.grid{grid-template-columns:1fr 1fr}}
     @media(max-width:500px){.grid{grid-template-columns:1fr}}
+      video{max-width:100%;display:block;border-radius:14px}
+    .media{border:1px solid var(--stroke);padding:12px;border-radius:18px}
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#top">Bradley Padgett</a>
+      <a class="brand" href="#top">Russ Padgett</a>
       <nav class="links">
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
@@ -58,14 +60,33 @@
       <div>
         <span class="badge">🎓 Technical Artist — Visualization Degree</span>
         <h1>Building the bridge between art and engineering.</h1>
-        <p>I’m Bradley Padgett, a Technical Artist specializing in <strong>Unreal Engine</strong>, shaders, Niagara FX, and pipeline tooling. With a B.S. in Visualization from Texas A&M, I craft performant, scalable systems for games and interactive experiences.</p>
+        <p>I’m Russ Padgett, a Technical Artist specializing in <strong>Unreal Engine</strong>, shaders, Niagara FX, and pipeline tooling. With a B.S. in Visualization from Texas A&M, I craft performant, scalable systems for games and interactive experiences.</p>
         <div class="cta">
           <a class="btn" href="#projects">View Work</a>
-          <a class="btn secondary" href="/assets/Bradley-Padgett-Resume.pdf" download>Download Résumé</a>
+          <a class="btn secondary" href="/assets/Russ-Padgett-Resume.pdf" download>Download Résumé</a>
         </div>
       </div>
-      <div class="media">
-        <img src="/assets/hero-showreel.jpg" alt="Showreel preview" />
+      <div class="media" aria-label="Showreel video">
+        <!-- Vimeo embed (matches your old site behavior) -->
+        <div style="position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden">
+          <iframe
+            src="https://player.vimeo.com/video/1115977766?badge=0&autopause=0&title=0&byline=0&portrait=0&muted=1&autoplay=1&loop=1"
+            style="position:absolute;inset:0;border:0;width:100%;height:100%"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="Showreel">
+          </iframe>
+        </div>
+      </div>
+      </div>
+        <p class="meta" style="margin-top:8px">
+          Prefer a file embed? Replace with:
+        </p>
+        <pre style="white-space:pre-wrap;overflow:auto;background:transparent;border:1px dashed var(--stroke);padding:10px;border-radius:10px;color:var(--muted)">&lt;video controls autoplay muted loop playsinline poster="/assets/showreel-still.jpg" style="width:100%"&gt;
+  &lt;source src="/assets/showreel.mp4" type="video/mp4" /&gt;
+  &lt;source src="/assets/showreel.mpg" type="video/mpeg" /&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</pre>
       </div>
     </section>
 
@@ -144,13 +165,13 @@
     <section id="contact">
       <h2>Contact</h2>
       <p class="lead">Let’s connect about technical art, shaders, or real‑time rendering.</p>
-      <p><a class="btn" href="mailto:bradleypadgett@gmail.com">Email Me</a></p>
+      <p><a class="btn" href="mailto:russpadgett@gmail.com">Email Me</a></p>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <small>© <span id="year"></span> Bradley Padgett. All rights reserved.</small>
+      <small>© <span id="year"></span> Russ Padgett. All rights reserved.</small>
     </div>
   </footer>
 
