@@ -5,25 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Russ Padgett – Technical Artist Portfolio</title>
   <meta name="description" content="Portfolio website for Russ Padgett, a Technical Artist specializing in shaders, Unreal Engine, real‑time rendering, and pipeline tooling." />
-  <meta property="og:title" content="Russ Padgett – Technical Artist" />
-  <meta property="og:description" content="Shaders • Unreal Engine • Tools • Real‑time Rendering" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/cover.jpg" />
-  <meta name="theme-color" content="#0b0b10" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>/* same styles as before */</style>
+  <style>
+    :root{
+      --bg: #0b0b10; --text:#e7e9ee; --muted:#b7bcc9;
+      --brand:#7aa2ff; --brand-2:#9a7dff; --card:#13141d; --stroke:#222537;
+      --shadow:0 10px 25px rgba(0,0,0,.35);
+    }
+    body{margin:0;font-family:Inter,system-ui;background:var(--bg);color:var(--text)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{position:sticky;top:0;background:rgba(11,11,16,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--stroke)}
+    .container{width:min(1100px,92%);margin:auto}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+    .nav .links{display:flex;gap:18px}
+    .brand{font-weight:800;color:var(--text)}
+    section{padding:60px 0}
+    h1,h2,h3{margin:0}
+    h1{font-size:44px;line-height:1.1}
+    h2{font-size:28px;margin-bottom:14px}
+    p.lead{color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding-top:60px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:600;box-shadow:var(--shadow);background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0b10}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--stroke);box-shadow:none}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:10px 0 6px;font-size:20px}
+    .meta{color:var(--muted);font-size:14px}
+    footer{padding:30px 0;border-top:1px solid var(--stroke);color:var(--muted);text-align:center}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    @media(max-width:700px){.grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:500px){.grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <a class="brand" href="#top">Russ Padgett</a>
-      <nav class="links" aria-label="Primary">
+      <nav class="links">
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
-        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#mentorships">Mentorships</a>
+        <a href="#community">Community</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -31,93 +55,97 @@
 
   <main id="top" class="container">
     <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <span class="badge">🎓 Technical Artist — Degree Focus</span>
-          <h1>Building the bridge between art and engineering.</h1>
-          <p>
-            I’m Russ Padgett, a Technical Artist focusing on <strong>Unreal Engine</strong>, real‑time rendering,
-            shaders, and tools development. I turn visual ideas into performant, scalable pipelines for games and interactive experiences.
-          </p>
-          <div class="cta">
-            <a class="btn" href="#projects">View Work</a>
-            <a class="btn secondary" href="/assets/Russ-Padgett-Resume.pdf" download>Download Résumé</a>
-          </div>
+      <div>
+        <span class="badge">🎓 Technical Artist — Visualization Degree</span>
+        <h1>Building the bridge between art and engineering.</h1>
+        <p>I’m Russ Padgett, a Technical Artist specializing in <strong>Unreal Engine</strong>, shaders, Niagara FX, and pipeline tooling. With a B.S. in Visualization from Texas A&M, I craft performant, scalable systems for games and interactive experiences.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Work</a>
+          <a class="btn secondary" href="/assets/Russ-Padgett-Resume.pdf" download>Download Résumé</a>
         </div>
-        <div class="media">
-          <img src="/assets/hero-showreel.jpg" alt="Showreel preview still" />
-        </div>
+      </div>
+      <div class="media">
+        <img src="/assets/hero-showreel.jpg" alt="Showreel preview" />
       </div>
     </section>
 
-    <!-- Projects section unchanged -->
-
-    <section id="skills">
-      <div class="section-head">
-        <h2>Core Skills</h2>
-        <p class="lead">Cloud-based solutions, shaders, real-time rendering, pipeline tooling, and more.</p>
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>Texas A&M University — B.S. Visualization (2019–2023)</h3>
+        <p class="meta">College of Architecture, College Station TX</p>
       </div>
-      <div class="skill-list">
-        <div class="skill">
-          <h4>Front-End</h4>
-          <p class="meta">ReactJS (Class/FC, Hooks, Redux, Vite, NextJS), Blazor, MVC, HTML5, CSS, JavaScript</p>
-        </div>
-        <div class="skill">
-          <h4>Back-End & Languages</h4>
-          <p class="meta">C#, .NET Core (ASP.NET, RESTful API), GoLang, Java (Spring Boot)</p>
-        </div>
-        <div class="skill">
-          <h4>Databases</h4>
-          <p class="meta">SQL Server (query optimization), EF Core, NHibernate, Postgres, CosmosDB, Redis, Snowflake</p>
-        </div>
-        <div class="skill">
-          <h4>Cloud Platforms</h4>
-          <p class="meta">Azure Functions, Service Bus, Event Grid, Event Hub, AKS, Microservices, Kafka, AWS GameLift</p>
-        </div>
-        <div class="skill">
-          <h4>Tools & DevOps</h4>
-          <p class="meta">ADO, GitHub, Visual Studio, VS Code, IntelliJ, Git, CI/CD</p>
-        </div>
-        <div class="skill">
-          <h4>Collaboration</h4>
-          <p class="meta">Mentorship, documentation, cross-team integration, partner/client collaboration</p>
-        </div>
+    </section>
+
+    <section id="mentorships">
+      <h2>Mentorships</h2>
+      <div class="card">
+        <h3>Epic Games (2022–2023)</h3>
+        <p class="meta">Mentored by an Epic Games Technical Artist</p>
+        <p>Developed lightweight principled shaders modularized into material functions with quality/platform switches for reusability and cleanliness.</p>
       </div>
     </section>
 
     <section id="experience">
-      <div class="section-head">
-        <h2>Professional Experience</h2>
-        <p class="lead">Highlights from my career as a Technical Artist and Software Engineer.</p>
-      </div>
+      <h2>Work Experience</h2>
       <div class="grid">
-        <div class="card" style="grid-column: span 12;">
-          <h3>Senior Software Engineer – GEICO (01/24 – Present)</h3>
-          <p class="meta">Leading design & development of a self-service partner integration platform.</p>
-          <p>
-            Built scalable microservices and APIs enabling partners to seamlessly integrate with GEICO offerings.
-            Collaborated with cross-functional teams, ensuring reliability, security, and performance in production systems.
-          </p>
-        </div>
-        <div class="card" style="grid-column: span 12;">
-          <h3>Technical Artist – Shell / Forestry Projects</h3>
-          <p class="meta">Interactive facility representation • Visualization • Shader pipelines</p>
-          <p>
-            Partnered with Shell to deliver interactive facility representations. Collaborated with A&M Forestry Service on deforestation & flood simulations. Created shader pipelines, optimized materials, and mentored peers on Unreal workflows.
-          </p>
-        </div>
-        <div class="card" style="grid-column: span 12;">
-          <h3>Software Engineer – SureTax (Prototype & Scaling)</h3>
-          <p class="meta">Cloud-native architecture • SaaS tax calculation engine</p>
-          <p>
-            Architected, developed, and scaled the SureTax engine from prototype to SaaS product. Leveraged Azure technologies and event-driven design to handle high-throughput transaction processing.
-          </p>
+        <div class="card" style="grid-column:span 12;">
+          <h3>LIVE Lab — Educational Game Dev & Research Studio (2022–2024)</h3>
+          <p class="meta">Technical Artist</p>
+          <ul>
+            <li>Partnered with Shell to create interactive digital facility representations through on‑site collaboration.</li>
+            <li>Collaborated with A&M Forestry Service on interactive deforestation & flood stage simulations.</li>
+            <li>Created & documented shader pipelines/tools to improve workflows for dev & research teams.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- About and Contact sections unchanged -->
+    <section id="projects">
+      <h2>Recent Independent Projects</h2>
+      <div class="grid">
+        <div class="card" style="grid-column:span 6;">
+          <h3>Stack | <a href="https://stackplugin.com" target="_blank">stackplugin.com</a></h3>
+          <p>Unreal Engine plugin enabling technical designers to customize workflows; required in‑depth research into Unreal’s architecture to ensure flexibility and efficiency.</p>
+        </div>
+        <div class="card" style="grid-column:span 6;">
+          <h3>Painterly Stylized Shaders</h3>
+          <p>Developed Editor Utility tools for bulk asset conversion, geometry‑based cleanup, and reference filtering. Optimized material quality switches by reducing shader instructions and texture samples.</p>
+        </div>
+        <div class="card" style="grid-column:span 6;">
+          <h3>Niagara Sailing FX</h3>
+          <p>Created advanced gameplay & visual systems using Niagara’s Grid2D Simulation Stages, integrating Gerstner waves for wave‑height sampling and developing sailing/drifting mechanics with Niagara feedback.</p>
+        </div>
+        <div class="card" style="grid-column:span 6;">
+          <h3>Lantern Festival w/ PCG</h3>
+          <p>Built Unreal tools with Procedural Content Generation for rapid environment iteration, Niagara FX for foliage/lantern control, and Substrate BSDF materials for advanced MegaLight assets.</p>
+        </div>
+        <div class="card" style="grid-column:span 6;">
+          <h3>AWS Demo | C++ Dedicated Server</h3>
+          <p>Scalable multiplayer system with AWS GameLift, Lambda, and DynamoDB to support reliable matchmaking, authentication, and persistent player data.</p>
+        </div>
+      </div>
+    </section>
 
+    <section id="community">
+      <h2>Community Involvement</h2>
+      <div class="grid">
+        <div class="card" style="grid-column:span 6;">
+          <h3>Judge — Chillennium Game Jam (2024)</h3>
+          <p>Assessed game submissions on creativity, design, and technical execution alongside industry professionals; provided feedback to student developers.</p>
+        </div>
+        <div class="card" style="grid-column:span 6;">
+          <h3>Child Advocacy Game for Scotty’s House (2021)</h3>
+          <p>Collaborated with Brazos County Courthouse & non‑profit to design an educational courtroom simulation for children. Led project management, scripting, lighting, and repo management.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="lead">Let’s connect about technical art, shaders, or real‑time rendering.</p>
+      <p><a class="btn" href="mailto:russpadgett@gmail.com">Email Me</a></p>
+    </section>
   </main>
 
   <footer>
@@ -126,6 +154,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
