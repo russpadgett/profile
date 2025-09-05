@@ -13,7 +13,56 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>/* same styles as before */</style>
+  <style>
+  :root{
+    --bg:#0b0b10; --bg2:#12131a; --text:#e7e9ee; --muted:#b7bcc9;
+    --brand:#7aa2ff; --brand2:#9a7dff; --card:#13141d; --stroke:#222537;
+    --shadow:0 10px 25px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#ffffff; --bg2:#f7f7fb; --text:#0f1220; --muted:#4c5368; --card:#ffffff; --stroke:#e5e7f0; --shadow:0 10px 25px rgba(17,24,39,.08); }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+  img,video{max-width:100%;display:block;border-radius:14px}
+  .container{width:min(1100px,92%);margin-inline:auto}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(8px);background:color-mix(in oklab, var(--bg), transparent 40%);border-bottom:1px solid var(--stroke)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{font-weight:800;letter-spacing:.2px;color:var(--text)}
+  .links{display:flex;gap:18px}
+
+  /* Sections */
+  section{padding:56px 0}
+  .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}
+  h1{font-size:clamp(28px,4.2vw,44px);line-height:1.1;margin:16px 0 10px}
+  h2{font-size:28px;margin:0}
+  p.lead{color:var(--muted);margin-top:8px}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#0b0b10;padding:12px 16px;border-radius:12px;font-weight:700;border:0;box-shadow:var(--shadow)}
+  .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--stroke);box-shadow:none}
+
+  /* Hero */
+  .hero{padding:56px 0 24px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+  .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid var(--stroke);border-radius:999px;color:var(--muted);font-size:13px}
+  .media{background:linear-gradient(180deg, rgba(122,162,255,.12), rgba(154,125,255,.05));border:1px solid var(--stroke);padding:10px;border-radius:18px;box-shadow:var(--shadow)}
+  .media .embed{position:relative;aspect-ratio:16/9;width:100%;max-height:clamp(220px,42vh,420px);overflow:hidden;border-radius:14px}
+  .media .embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* Cards & grids */
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+  .card{background:var(--card);border:1px solid var(--stroke);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+  .card h3{margin:10px 0 6px;font-size:20px}
+  .meta{color:var(--muted);font-size:14px}
+
+  /* Responsive */
+  @media (max-width:920px){.hero-grid{grid-template-columns:1fr}.media .embed{max-height:clamp(220px,45vw,380px)}}
+  @media (max-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <header>
@@ -41,20 +90,19 @@
           </p>
           <div class="cta">
             <a class="btn" href="#projects">View Work</a>
-            <a class="btn secondary" href="/assets/Bradley_Padgett_Resume.pdf" download>Download Résumé</a>
+            <a class="btn secondary" href="/assets/Bradley-Padgett-Resume.pdf" download>Download Résumé</a>
           </div>
         </div>
         <div class="media" aria-label="Showreel video">
-          <!-- Vimeo embed (matches your old site behavior) -->
-          <div style="position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden">
-            <iframe
-              src="https://player.vimeo.com/video/1115977766?badge=0&autopause=0&title=0&byline=0&portrait=0&muted=1&autoplay=1&loop=1"
-              style="position:absolute;inset:0;border:0;width:100%;height:100%"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
-              title="Showreel">
-            </iframe>
-          </div>
+  <div class="embed">
+    <iframe
+      src="https://player.vimeo.com/video/1115977766?badge=0&autopause=0&title=0&byline=0&portrait=0&muted=1&autoplay=1&loop=1"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      title="Showreel">
+    </iframe>
+  </div>
+</div>
         </div>
       </div>
     </section>
