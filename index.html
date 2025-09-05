@@ -26,7 +26,6 @@
     .badge-pill{ border:1px solid var(--stroke); color:var(--muted) }
     .media-frame{ border:1px solid var(--stroke); border-radius:1rem; padding:.5rem; background:rgba(122,162,255,.08) }
     .ratio > iframe, .ratio > video{ border-radius:.75rem }
-    .nav-pills .nav-link.active{ background:linear-gradient(135deg,#7aa2ff,#9a7dff); color:#0b0b10; font-weight:700 }
     .tab-pane{ padding-top:1.5rem }
     .card{ background:#13141d; border-color:#222537; color:var(--text) }
     .text-muted{ color:var(--muted) !important }
@@ -37,7 +36,7 @@
   <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Primary">
       <div class="container">
-        <a class="navbar-brand" href="#tab-showreel">Bradley Padgett v3</a>
+        <a class="navbar-brand" href="#tab-showreel">Bradley Padgett v4</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTabs" aria-controls="navbarTabs" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,21 +57,9 @@
   </header>
 
   <main id="top" class="container py-4">
-    <!-- Tabs -->
-    <ul class="nav nav-pills flex-wrap gap-2" id="portfolioTabs" role="tablist">
-      <li class="nav-item" role="presentation"><button class="nav-link active" id="showreel-tab" data-bs-toggle="tab" data-bs-target="#tab-showreel" type="button" role="tab">Showreel</button></li>
-      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-projects" type="button" role="tab">Projects</button></li>
-      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-experience" type="button" role="tab">Experience</button></li>
-      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-skills" type="button" role="tab">Skills</button></li>
-      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-education" type="button" role="tab">Education</button></li>
-      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-mentorships" type="button" role="tab">Mentorships</button></li>
-      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-community" type="button" role="tab">Community</button></li>
-      <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-contact" type="button" role="tab">Contact</button></li>
-    </ul>
-
     <div class="tab-content">
       <!-- Showreel -->
-      <div class="tab-pane fade show active" id="tab-showreel" role="tabpanel" aria-labelledby="showreel-tab">
+      <div class="tab-pane fade show active" id="tab-showreel" role="tabpanel">
         <div class="row align-items-center g-4 mt-2">
           <div class="col-lg-6">
             <span class="badge rounded-pill badge-pill">🎓 Technical Artist — Visualization Degree</span>
@@ -93,7 +80,129 @@
         </div>
       </div>
 
-      <!-- Other tabs (Projects, Experience, Skills, Education, Mentorships, Community, Contact) go here -->
+      <!-- Projects -->
+      <div class="tab-pane fade" id="tab-projects" role="tabpanel">
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">Stack | <a class="link-light" href="https://stackplugin.com" target="_blank" rel="noreferrer">stackplugin.com</a></h5>
+              <p class="card-text">Unreal Engine plugin enabling technical designers to customize workflows; required in-depth research into Unreal’s architecture to ensure flexibility and efficiency.</p>
+            </div></div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">Painterly Stylized Shaders</h5>
+              <p class="card-text">Editor Utility tools for bulk asset conversion to principled shaders, geometry cleanup, and reference filtering; optimized material quality switches by reducing shader instructions and texture samples.</p>
+            </div></div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">Niagara Sailing FX</h5>
+              <p class="card-text">Advanced systems using Niagara Grid2D Simulation Stages to localize rigid mesh collision data to render targets for trail effects (sand, water, etc.); Gerstner waves via Material Parameter Collections; Niagara-driven visual gameplay feedback.</p>
+            </div></div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">Lantern Festival — with PCG</h5>
+              <p class="card-text">Procedural Content Generation tools for rapid environment iteration, integrated with Niagara FX for dynamic foliage/lantern control and Substrate BSDF materials for advanced MegaLight assets.</p>
+            </div></div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100"><div class="card-body">
+              <h5 class="card-title">AWS Demo | C++ Dedicated Server</h5>
+              <p class="card-text">Scalable multiplayer with AWS GameLift, Lambda, and DynamoDB for matchmaking, authentication, and persistent player data.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="tab-pane fade" id="tab-experience" role="tabpanel">
+        <div class="card mb-3"><div class="card-body">
+          <h5 class="card-title">LIVE Lab — Educational Game Development & Research Studio <span class="text-muted">(Mar 2022 – May 2024)</span></h5>
+          <div class="text-muted">Technical Artist</div>
+          <ul class="mt-2 mb-0">
+            <li>Partnered with Shell to create interactive digital facility representations through on‑site client collaboration.</li>
+            <li>Collaborated with A&M Forestry Service on interactive demonstrations of deforestation and flood stages.</li>
+            <li>Created and documented shader pipelines/tools aiding workflows for development & research teams.</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <!-- Skills -->
+      <div class="tab-pane fade" id="tab-skills" role="tabpanel">
+        <div class="row g-3 mt-1">
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body">
+            <h6>Engines</h6>
+            <div class="text-muted">Unreal Engine (Niagara, Materials, Blueprints), Unity (Shaders, VFX Graph)</div>
+          </div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body">
+            <h6>Rendering & Shaders</h6>
+            <div class="text-muted">HLSL / GLSL, principled shader pipelines, material functions, quality/LOD tiers, GPU profiling</div>
+          </div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body">
+            <h6>Tools & Pipelines</h6>
+            <div class="text-muted">Editor Utility Blueprints, batch conversion tools, geometry cleanup, reference filtering, performance audits</div>
+          </div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body">
+            <h6>Programming</h6>
+            <div class="text-muted">C++ / C#, Python; gameplay systems; REST services; version control (Git/Perforce)</div>
+          </div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body">
+            <h6>Cloud & Backend (for games)</h6>
+            <div class="text-muted">AWS GameLift, Lambda, DynamoDB; Azure (Functions, Service Bus, Event Grid, AKS)</div>
+          </div></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body">
+            <h6>DCC & Content</h6>
+            <div class="text-muted">Blender, Substance 3D, Houdini (HDA), lighting & look‑dev</div>
+          </div></div></div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="tab-pane fade" id="tab-education" role="tabpanel">
+        <div class="card"><div class="card-body">
+          <h5 class="card-title">Texas A&M University — B.S. Visualization</h5>
+          <div class="text-muted">College of Architecture, College Station, TX • 2019–2023</div>
+        </div></div>
+      </div>
+
+      <!-- Mentorships -->
+      <div class="tab-pane fade" id="tab-mentorships" role="tabpanel">
+        <div class="card"><div class="card-body">
+          <h5 class="card-title">Epic Games <span class="text-muted">(2022–2023)</span></h5>
+          <p class="mb-0">Mentored by an Epic Games Technical Artist to develop lightweight principled shaders modularized into material functions with quality/platform switches for reusability and cleanliness.</p>
+        </div></div>
+      </div>
+
+      <!-- Community -->
+      <div class="tab-pane fade" id="tab-community" role="tabpanel">
+        <div class="row g-3 mt-1">
+          <div class="col-md-6"><div class="card h-100"><div class="card-body">
+            <h6>Judge — Chillennium Game Jam (2024)</h6>
+            <p class="mb-0">Served as a judge with industry professionals for the world’s largest student‑run game competition; assessed submissions on creativity, design, and technical execution, providing critique to student developers.</p>
+          </div></div></div>
+          <div class="col-md-6"><div class="card h-100"><div class="card-body">
+            <h6>Child Advocacy Game for Scotty’s House (2021)</h6>
+            <p class="mb-0">Collaborated with a non‑profit and Brazos County Courthouse to design an educational courtroom simulation for children; led project management, scripting, lighting, and repository management.</p>
+          </div></div></div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="tab-pane fade" id="tab-contact" role="tabpanel">
+        <div class="card"><div class="card-body">
+          <h5 class="card-title">Get in touch</h5>
+          <p class="text-muted">Open to technical artist roles, shader work, and tooling engagements.</p>
+          <!-- TODO: Replace the placeholder email and profiles with your real links -->
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" href="mailto:bradleypadgett@gmail.com">Email Bradley</a>
+            <a class="btn btn-outline-light" href="https://www.artstation.com/your-handle" target="_blank" rel="noreferrer">ArtStation</a>
+            <a class="btn btn-outline-light" href="https://github.com/your-handle" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn btn-outline-light" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div></div>
+      </div>
     </div>
   </main>
 
