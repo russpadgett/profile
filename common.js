@@ -37,20 +37,35 @@ function setActiveNavigation(currentPage) {
 // Fix navigation links based on current path
 function fixNavigationPaths() {
 	const currentPath = window.location.pathname;
-	const isInSubfolder = currentPath !== '/' && currentPath.includes('/') && !currentPath.endsWith('index.html');
+
+	// Calculate depth by counting directory separators
+	const pathParts = currentPath
+		.replace(/\/$/, '')
+		.split('/')
+		.filter((part) => part !== '');
 
 	// Update brand link
 	const brandLink = document.getElementById('brand-link');
 	if (brandLink) {
-		brandLink.href = isInSubfolder ? '../../' : './';
+		if (pathParts.length <= 1) {
+			brandLink.href = './';
+		} else {
+			const levelsUp = '../'.repeat(pathParts.length);
+			brandLink.href = levelsUp;
+		}
 	}
 
 	// Update navigation links
 	document.querySelectorAll('.nav-link[data-page]').forEach((link) => {
 		const page = link.getAttribute('data-page');
-		// If we're at the root, navigate to pages subdirectory
-		// If we're in a page subdirectory, navigate to sibling directories
-		link.href = isInSubfolder ? `../${page}/` : `./pages/${page}/`;
+		if (pathParts.length <= 1) {
+			// At root level, navigate to pages subdirectory
+			link.href = `./pages/${page}/`;
+		} else {
+			// In nested pages, navigate to sibling directories
+			const levelsUp = '../'.repeat(pathParts.length);
+			link.href = `${levelsUp}pages/${page}/`;
+		}
 	});
 }
 
@@ -66,8 +81,31 @@ function setCurrentYear() {
 async function initializeCommon(currentPage = null) {
 	// Determine the relative path to components based on current location
 	const currentPath = window.location.pathname;
-	const isInSubfolder = currentPath !== '/' && currentPath.includes('/') && !currentPath.endsWith('index.html');
-	const componentsPath = isInSubfolder ? '../components/' : './components/';
+
+	// Calculate depth by counting directory separators
+	// Remove trailing slash and split by '/'
+	const pathParts = currentPath
+		.replace(/\/$/, '')
+		.split('/')
+		.filter((part) => part !== '');
+
+	// For root path or just index.html, use current directory
+	let componentsPath;
+	if (pathParts.length <= 1) {
+		componentsPath = './components/';
+	} else {
+		// For nested paths, go up the appropriate number of levels
+		const levelsUp = '../'.repeat(pathParts.length);
+		componentsPath = levelsUp + 'components/';
+	}
+
+	// Debug logging
+	console.log('Header loading debug:', {
+		currentPath,
+		pathParts,
+		componentsPath,
+		headerUrl: `${componentsPath}header.html`,
+	});
 
 	// Load header and footer components
 	const headerLoaded = await loadComponent('header-placeholder', `${componentsPath}header.html`);
@@ -93,7 +131,6 @@ async function initializeCommon(currentPage = null) {
 		document.head.appendChild(script);
 	}
 }
-
 
 // Export for use in individual pages
 window.initializeCommon = initializeCommon;

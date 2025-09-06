@@ -170,6 +170,32 @@ header {
 	box-shadow: 0 4px 16px var(--shadow);
 }
 
+/* Skill cards with enhanced hover effects */
+.skill-card {
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border: 1px solid var(--stroke);
+}
+
+.skill-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 24px var(--shadow);
+	border-color: var(--brand);
+}
+
+.skill-card:hover .card-title {
+	color: var(--brand);
+}
+
+.skill-card:hover small {
+	transform: translateX(4px);
+}
+
+.skill-card small {
+	transition: transform 0.2s ease;
+	font-weight: 600;
+}
+
 .card-title {
 	color: var(--text);
 }
