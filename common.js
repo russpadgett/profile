@@ -55,6 +55,17 @@ function fixNavigationPaths() {
 		}
 	}
 
+	// Update overview link
+	const overviewLink = document.getElementById('overview-link');
+	if (overviewLink) {
+		if (pathParts.length <= 1) {
+			overviewLink.href = './';
+		} else {
+			const levelsUp = '../'.repeat(pathParts.length);
+			overviewLink.href = levelsUp;
+		}
+	}
+
 	// Update navigation links
 	document.querySelectorAll('.nav-link[data-page]').forEach((link) => {
 		const page = link.getAttribute('data-page');
