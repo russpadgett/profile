@@ -44,27 +44,18 @@ function fixNavigationPaths() {
 		.split('/')
 		.filter((part) => part !== '');
 
-	// Update brand link
+	// Update brand link to point to overview page
 	const brandLink = document.getElementById('brand-link');
 	if (brandLink) {
 		if (pathParts.length <= 1) {
-			brandLink.href = './';
+			brandLink.href = './pages/overview/';
 		} else {
 			const levelsUp = '../'.repeat(pathParts.length);
-			brandLink.href = levelsUp;
+			brandLink.href = `${levelsUp}pages/overview/`;
 		}
 	}
 
-	// Update overview link
-	const overviewLink = document.getElementById('overview-link');
-	if (overviewLink) {
-		if (pathParts.length <= 1) {
-			overviewLink.href = './';
-		} else {
-			const levelsUp = '../'.repeat(pathParts.length);
-			overviewLink.href = levelsUp;
-		}
-	}
+	// Overview link is now handled by the general navigation links below since it has data-page="overview"
 
 	// Update navigation links
 	document.querySelectorAll('.nav-link[data-page]').forEach((link) => {

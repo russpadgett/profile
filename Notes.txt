@@ -1,0 +1,98 @@
+Mentoring
+
+Topology
+- SEE ONE NOTE - Team Butch - Sales Function Flow
+Logging
+Splunk (logs searching + analysis)
+Titan (distributed graph database - metrics storage + query): Elastic Scaling, Distributed/Replicated Data, Fault tolerant, high availability 
+Grafana (monitor, visualize, analyze telemetry data)
+
+Secure Coding
+ - 
+
+Kubernetes
+Minikube
+Kube Express
+Rancher 
+
+
+GitLab
+GitHub
+ADO
+- Repos
+- Pipelines
+- SonarQube
+Git
+
+Visual Studio
+VSCode
+Cursor
+
+System Design (SEE ONENOTE - Training)
+Data Structors / Algorithms (SEE ONENOTE - Training)
+C# (Statements, Expressions, Types, Classes/Structs/Records, Interfaces, Delegates, Indexers, Events, Generics, Equality, )
+Java /  Spring Boot
+ASP.NET CORE
+Go
+NodeJS (npm)
+
+React
+- Hooks
+- React Dev Tools
+MVC
+Blazor
+
+Vitest/Jest
+
+
+
+Service Bus
+RabbitMQ
+Kafka
+
+Swagger
+
+KeyVault
+
+KeyCloak
+
+Postman
+Bruno
+Insomnia
+
+IPPM
+EPPM
+- Registration
+- Activation
+- Password Reset
+- Login
+- 2FA
+- Access Request
+- Credential Delivery
+
+GenMetrics
+- Business Reports
+- Analytics
+
+SQL
+- Migration
+Postgres
+CosmosDB
+
+Azure Storage
+- Blob Containers
+- File Shares
+- Queues
+- Tables
+
+Release Management
+- DV, UT, PD1/PD8
+
+Event Streaming
+
+Snowflake
+PowerBI
+
+
+
+
