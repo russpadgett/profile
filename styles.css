@@ -197,14 +197,15 @@ header {
 
 /* Buttons */
 .btn-primary {
-	background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+	background: #0d6efd;
 	border: none;
-	box-shadow: 0 2px 8px rgba(var(--brand), 0.3);
+	box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3);
 }
 
 .btn-primary:hover {
+	background: #0b5ed7;
 	transform: translateY(-1px);
-	box-shadow: 0 4px 12px rgba(var(--brand), 0.4);
+	box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
 }
 
 .btn-outline-light {
