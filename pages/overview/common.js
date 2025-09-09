@@ -63,8 +63,18 @@ function fixNavigationPaths() {
 		if (pathParts.length <= 1) {
 			// At root level, navigate to pages subdirectory
 			link.href = `./pages/${page}/`;
+		} else if (pathParts[0] === 'pages') {
+			// Already in pages directory, navigate to sibling directories
+			if (pathParts.length === 2) {
+				// Direct child of pages (e.g., /pages/overview/)
+				link.href = `../${page}/`;
+			} else {
+				// Nested within a page (e.g., /pages/overview/sub-page/)
+				const levelsUp = '../'.repeat(pathParts.length - 1);
+				link.href = `${levelsUp}${page}/`;
+			}
 		} else {
-			// In nested pages, navigate to sibling directories
+			// In other nested pages, navigate to pages subdirectory
 			const levelsUp = '../'.repeat(pathParts.length);
 			link.href = `${levelsUp}pages/${page}/`;
 		}
