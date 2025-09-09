@@ -1,0 +1,105 @@
+=== TECHNICAL SKILLS & KNOWLEDGE BASE ===
+
+## PROGRAMMING LANGUAGES & FRAMEWORKS
+- C# (Statements, Expressions, Types, Classes/Structs/Records, Interfaces, Delegates, Indexers, Events, Generics, Equality)
+- Java / Spring Boot
+- ASP.NET CORE
+- Go
+- NodeJS (npm)
+- React
+  - Hooks
+  - React Dev Tools
+- MVC
+- Blazor
+
+## DEVELOPMENT TOOLS & IDEs
+- Visual Studio
+- VSCode
+- Cursor
+
+## VERSION CONTROL & DevOps
+- Git
+- GitLab
+- GitHub
+- ADO (Azure DevOps)
+  - Repos
+  - Pipelines
+  - SonarQube
+
+## CONTAINER ORCHESTRATION & INFRASTRUCTURE
+- Kubernetes
+- Minikube
+- Kube Express
+- Rancher
+
+## DATABASES
+- SQL
+  - Migration
+- Postgres
+- CosmosDB
+- Snowflake
+- Titan (distributed graph database - metrics storage + query)
+  - Elastic Scaling
+  - Distributed/Replicated Data
+  - Fault tolerant, high availability
+
+## CLOUD SERVICES & STORAGE
+- Azure Storage
+  - Blob Containers
+  - File Shares
+  - Queues
+  - Tables
+- KeyVault
+
+## MONITORING & LOGGING
+- Logging
+- Splunk (logs searching + analysis)
+- Grafana (monitor, visualize, analyze telemetry data)
+
+## SECURITY & AUTHENTICATION
+- Secure Coding
+- KeyCloak
+
+## API TESTING & DOCUMENTATION
+- Postman
+- Bruno
+- Insomnia
+- Swagger
+
+## TESTING
+- Vitest/Jest
+
+## MESSAGE QUEUING & EVENT STREAMING
+- Service Bus
+- RabbitMQ
+- Kafka
+- Event Streaming
+
+## DATA ANALYTICS & BUSINESS INTELLIGENCE
+- PowerBI
+- GenMetrics
+  - Business Reports
+  - Analytics
+
+## PROJECT-SPECIFIC SYSTEMS
+- IPPM
+- EPPM
+  - Registration
+  - Activation
+  - Password Reset
+  - Login
+  - 2FA
+  - Access Request
+  - Credential Delivery
+
+## CONCEPTS & LEARNING RESOURCES
+- System Design (SEE ONENOTE - Training)
+- Data Structures / Algorithms (SEE ONENOTE - Training)
+- Topology (SEE ONE NOTE - Team Butch - Sales Function Flow)
+- Mentoring
+- Release Management
+  - DV, UT, PD1/PD8
+
+
+
+

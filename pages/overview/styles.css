@@ -1,0 +1,338 @@
+/* Dark theme variables (default) */
+:root {
+	--bg: #0b0b10;
+	--bg-secondary: #13141d;
+	--text: #e7e9ee;
+	--text-muted: #b7bcc9;
+	--brand: #7aa2ff;
+	--stroke: #222537;
+	--card-bg: #13141d;
+	--navbar-bg: rgba(11, 11, 16, 0.95);
+	--shadow: rgba(0, 0, 0, 0.3);
+	--hover-bg: #1a1b26;
+	--gradient-start: #7aa2ff;
+	--gradient-end: #9a7dff;
+}
+
+/* Light theme variables */
+:root[data-theme="light"] {
+	--bg: #ffffff;
+	--bg-secondary: #f8f9fa;
+	--text: #212529;
+	--text-muted: #6c757d;
+	--brand: #0d6efd;
+	--stroke: #dee2e6;
+	--card-bg: #ffffff;
+	--navbar-bg: rgba(248, 249, 250, 0.95);
+	--shadow: rgba(0, 0, 0, 0.1);
+	--hover-bg: #f8f9fa;
+	--gradient-start: #0d6efd;
+	--gradient-end: #6610f2;
+}
+
+/* Keep dark theme as default for data-theme="dark" */
+:root[data-theme="dark"] {
+	--bg: #0b0b10;
+	--bg-secondary: #13141d;
+	--text: #e7e9ee;
+	--text-muted: #b7bcc9;
+	--brand: #7aa2ff;
+	--stroke: #222537;
+	--card-bg: #13141d;
+	--navbar-bg: rgba(11, 11, 16, 0.95);
+	--shadow: rgba(0, 0, 0, 0.3);
+	--hover-bg: #1a1b26;
+}
+
+/* Auto theme based on system preference (only for auto mode) */
+@media (prefers-color-scheme: light) {
+	:root[data-theme="auto"] {
+		--bg: #ffffff;
+		--bg-secondary: #f8f9fa;
+		--text: #212529;
+		--text-muted: #6c757d;
+		--brand: #0d6efd;
+		--stroke: #dee2e6;
+		--card-bg: #ffffff;
+		--navbar-bg: rgba(248, 249, 250, 0.95);
+		--shadow: rgba(0, 0, 0, 0.1);
+		--hover-bg: #f8f9fa;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root[data-theme="auto"] {
+		--bg: #0b0b10;
+		--bg-secondary: #13141d;
+		--text: #e7e9ee;
+		--text-muted: #b7bcc9;
+		--brand: #7aa2ff;
+		--stroke: #222537;
+		--card-bg: #13141d;
+		--navbar-bg: rgba(11, 11, 16, 0.95);
+		--shadow: rgba(0, 0, 0, 0.3);
+		--hover-bg: #1a1b26;
+	}
+}
+
+/* Smooth theme transitions */
+* {
+	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+	font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Links */
+a {
+	color: var(--brand);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--brand);
+	text-decoration: underline;
+}
+
+/* Main content - flex grow to push footer down */
+main {
+	flex: 1;
+}
+
+/* Header */
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1030;
+	backdrop-filter: blur(12px);
+	background: var(--navbar-bg);
+	border-bottom: 1px solid var(--stroke);
+	box-shadow: 0 2px 4px var(--shadow);
+}
+
+.navbar-brand {
+	font-weight: 800;
+	color: var(--text) !important;
+}
+
+.navbar-nav .nav-link {
+	color: var(--text-muted) !important;
+	font-weight: 500;
+	padding: 0.5rem 1rem !important;
+	border-radius: 0.5rem;
+	margin: 0 0.25rem;
+}
+
+.navbar-nav .nav-link:hover {
+	color: var(--text) !important;
+	background: var(--hover-bg);
+}
+
+.navbar-nav .nav-link.active {
+	color: #000000 !important;
+	background: #f5f5f5 !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lead {
+	color: var(--text-muted);
+}
+
+.text-muted {
+	color: var(--text-muted) !important;
+}
+
+/* Cards */
+.card {
+	background: var(--card-bg);
+	border: 1px solid var(--stroke);
+	color: var(--text);
+	box-shadow: 0 2px 8px var(--shadow);
+}
+
+.card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 16px var(--shadow);
+}
+
+/* Skill cards with enhanced hover effects */
+.skill-card {
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border: 1px solid var(--stroke);
+}
+
+.skill-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 24px var(--shadow);
+	border-color: var(--brand);
+}
+
+.skill-card:hover .card-title {
+	color: var(--brand);
+}
+
+.skill-card:hover small {
+	transform: translateX(4px);
+}
+
+.skill-card small {
+	transition: transform 0.2s ease;
+	font-weight: 600;
+}
+
+.card-title {
+	color: var(--text);
+}
+
+.card-text {
+	color: var(--text-muted);
+}
+
+/* Buttons */
+.btn-primary {
+	background: #0d6efd;
+	border: none;
+	box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3);
+}
+
+.btn-primary:hover {
+	background: #0b5ed7;
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+}
+
+.btn-outline-light {
+	border-color: var(--stroke);
+	color: var(--text);
+}
+
+.btn-outline-light:hover {
+	background: var(--hover-bg);
+	border-color: var(--brand);
+	color: var(--text);
+}
+
+/* Media */
+.media-frame {
+	border: 1px solid var(--stroke);
+	border-radius: 1rem;
+	padding: 0.5rem;
+	background: var(--bg-secondary);
+}
+
+.ratio>iframe,
+.ratio>video {
+	border-radius: 0.75rem;
+}
+
+/* Tabs */
+.tab-pane {
+	padding-top: 1.5rem;
+}
+
+.nav-tabs {
+	border-bottom-color: var(--stroke);
+}
+
+.nav-tabs .nav-link {
+	color: var(--text-muted);
+	border-color: transparent;
+}
+
+.nav-tabs .nav-link:hover {
+	border-color: var(--stroke);
+	color: var(--text);
+}
+
+.nav-tabs .nav-link.active {
+	color: var(--text);
+	background-color: var(--bg);
+	border-color: var(--stroke) var(--stroke) var(--bg);
+}
+
+/* Footer */
+footer {
+	border-top: 1px solid var(--stroke);
+	margin-top: 2rem;
+	padding: 2rem 0;
+	background: var(--bg-secondary);
+	color: var(--text-muted);
+}
+
+/* Bootstrap component overrides */
+.navbar-toggler {
+	border-color: var(--stroke);
+}
+
+.navbar-toggler:focus {
+	box-shadow: 0 0 0 0.2rem rgba(var(--brand), 0.25);
+}
+
+.form-control {
+	background: var(--bg);
+	border-color: var(--stroke);
+	color: var(--text);
+}
+
+.form-control:focus {
+	background: var(--bg);
+	border-color: var(--brand);
+	color: var(--text);
+	box-shadow: 0 0 0 0.2rem rgba(var(--brand), 0.25);
+}
+
+/* Additional Bootstrap component theming */
+.modal-content {
+	background: var(--bg);
+	border-color: var(--stroke);
+	color: var(--text);
+}
+
+.modal-header {
+	border-bottom-color: var(--stroke);
+}
+
+.modal-footer {
+	border-top-color: var(--stroke);
+}
+
+.dropdown-menu {
+	background: var(--card-bg);
+	border-color: var(--stroke);
+	color: var(--text);
+}
+
+.dropdown-item {
+	color: var(--text);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+	background: var(--hover-bg);
+	color: var(--text);
+}
+
+.dropdown-divider {
+	border-top-color: var(--stroke);
+}
+
+/* Alert components */
+.alert-primary {
+	background: rgba(var(--brand), 0.1);
+	border-color: rgba(var(--brand), 0.3);
+	color: var(--text);
+}
+
+/* Badge components */
+.badge {
+	background: var(--bg-secondary);
+	color: var(--text);
+	border: 1px solid var(--stroke);
+}
